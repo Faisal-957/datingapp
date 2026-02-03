@@ -1,8 +1,6 @@
-import 'package:datingapp/ui/screens/intro_screen/intro2_screen.dart';
-import 'package:datingapp/ui/screens/intro_screen/intro_screen.dart';
-import 'package:datingapp/ui/screens/intro_screen/intro_screen3.dart';
+import 'package:datingapp/ui/screens/personal_details/personal_details.dart';
+import 'package:datingapp/ui/screens/select_intrest/select_intrest.dart';
 import 'package:flutter/material.dart';
-import 'package:datingapp/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: IntroScreen3(),
+          home: SelectIntrest(),
         );
       },
     );
