@@ -13,7 +13,6 @@ class SelectIntrest extends StatefulWidget {
 }
 
 class _SelectIntrestState extends State<SelectIntrest> {
-  // List of interests
   final List<Map<String, String>> interests = [
     {"title": "Photography", "icon": "$iconsAssets/photo.png"},
     {"title": "Cooking", "icon": "$iconsAssets/cooking.png"},
@@ -29,7 +28,6 @@ class _SelectIntrestState extends State<SelectIntrest> {
     {"title": "Fitness", "icon": "$iconsAssets/fitness.png"},
   ];
 
-  // Selected interests
   List<String> selectedInterests = [];
 
   @override
@@ -71,7 +69,6 @@ class _SelectIntrestState extends State<SelectIntrest> {
               ),
               SizedBox(height: 40.h),
 
-              // Grid
               Expanded(
                 child: GridView.builder(
                   itemCount: interests.length,
@@ -115,9 +112,7 @@ class _SelectIntrestState extends State<SelectIntrest> {
                   width: 212.w,
                   height: 60.h,
                   borderRadius: 60,
-                  onTap: () {
-                    print("Selected Interests: $selectedInterests");
-                  },
+                  onTap: () {},
                 ),
               ),
               SizedBox(height: 20.h),

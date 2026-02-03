@@ -1,3 +1,4 @@
+import 'package:datingapp/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -66,9 +67,19 @@ class Intrestbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: isSelected ? Color(0xff7B49FF) : Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            blurRadius: 5,
+            spreadRadius: 2,
+            offset: Offset(0, 3),
+          ),
+        ],
+        color: whiteColor,
         borderRadius: BorderRadius.circular(60),
-        border: Border.all(color: isSelected ? Color(0xff7B49FF) : Colors.grey),
+        border: Border.all(
+          color: isSelected ? Color(0xff7B49FF) : Colors.white,
+        ),
       ),
       alignment: Alignment.center,
       child: Row(
@@ -77,13 +88,13 @@ class Intrestbutton extends StatelessWidget {
           Image.asset(
             iconPath,
             scale: 3,
-            color: isSelected ? Colors.white : null,
+            color: isSelected ? Color(0xffF34686) : null,
           ),
           8.horizontalSpace,
           Text(
             title,
             style: TextStyle(
-              color: isSelected ? Colors.white : Color(0xff33196B),
+              color: isSelected ? darkblueColor : Color(0xff745594),
               fontWeight: FontWeight.w500,
             ),
           ),
