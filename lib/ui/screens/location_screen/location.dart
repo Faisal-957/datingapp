@@ -6,9 +6,14 @@ import 'package:datingapp/core/custom_widget/custom_buttton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Location extends StatelessWidget {
+class Location extends StatefulWidget {
   const Location({super.key});
 
+  @override
+  State<Location> createState() => _LocationState();
+}
+
+class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

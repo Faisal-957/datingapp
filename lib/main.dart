@@ -1,3 +1,4 @@
+import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
 import 'package:datingapp/ui/screens/location_screen/location.dart';
 import 'package:datingapp/ui/screens/personal_details/personal_details.dart';
 import 'package:datingapp/ui/screens/select_intrest/select_intrest.dart';
@@ -18,7 +19,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(debugShowCheckedModeBanner: false, home: Location());
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Bottombar(),
+        );
       },
     );
   }
