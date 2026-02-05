@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // if (!mounted) return;
 
       Navigator.of(
+        // ignore: use_build_context_synchronously
         context,
       ).pushReplacement(MaterialPageRoute(builder: (context) => const Otp()));
     });

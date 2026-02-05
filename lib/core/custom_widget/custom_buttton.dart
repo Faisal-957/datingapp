@@ -69,6 +69,7 @@ class Intrestbutton extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Colors.grey.withOpacity(0.2),
             blurRadius: 5,
             spreadRadius: 2,
@@ -77,9 +78,7 @@ class Intrestbutton extends StatelessWidget {
         ],
         color: whiteColor,
         borderRadius: BorderRadius.circular(60),
-        border: Border.all(
-          color: isSelected ? Color(0xff7B49FF) : Colors.white,
-        ),
+        border: Border.all(color: isSelected ? secondaryColor : Colors.white),
       ),
       alignment: Alignment.center,
       child: Row(
@@ -88,7 +87,7 @@ class Intrestbutton extends StatelessWidget {
           Image.asset(
             iconPath,
             scale: 3,
-            color: isSelected ? Color(0xffF34686) : null,
+            color: isSelected ? primaryColor : darkblueColor,
           ),
           8.horizontalSpace,
           Text(

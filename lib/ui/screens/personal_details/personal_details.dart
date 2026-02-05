@@ -1,5 +1,4 @@
-// ignore: file_names
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, file_names
 
 import 'package:datingapp/core/constants/auth_decoration.dart';
 import 'package:datingapp/core/constants/string.dart';
@@ -9,14 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-class PersonalDetails extends StatefulWidget {
-  PersonalDetails({super.key});
+class Personaldetails extends StatefulWidget {
+  const Personaldetails({super.key});
 
   @override
-  State<PersonalDetails> createState() => _PersonalDetailsState();
+  State<Personaldetails> createState() => _PersonalDetailsState();
 }
 
-class _PersonalDetailsState extends State<PersonalDetails> {
+class _PersonalDetailsState extends State<Personaldetails> {
   // ✅ Controller should be in State class
   TextEditingController dobController = TextEditingController();
   String? selectedGender;

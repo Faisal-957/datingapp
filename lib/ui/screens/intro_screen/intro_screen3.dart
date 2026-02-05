@@ -72,7 +72,7 @@ class IntroScreen3 extends StatelessWidget {
                   ),
                   initialCountryCode: 'US',
                   onChanged: (phone) {
-                    print(phone.completeNumber); // +13316238413
+                    // +13316238413
                   },
                 ),
               ),

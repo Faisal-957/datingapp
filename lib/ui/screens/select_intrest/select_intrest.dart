@@ -15,6 +15,7 @@ class SelectIntrest extends StatefulWidget {
 class _SelectIntrestState extends State<SelectIntrest> {
   final List<Map<String, String>> interests = [
     {"title": "Photography", "icon": "$iconsAssets/photo.png"},
+
     {"title": "Cooking", "icon": "$iconsAssets/cooking.png"},
     {"title": "Video Games", "icon": "$iconsAssets/game.png"},
     {"title": "Music", "icon": "$iconsAssets/music.png"},
