@@ -3,8 +3,10 @@ import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
+import 'package:datingapp/ui/screens/location_screen/location1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Location extends StatefulWidget {
   const Location({super.key});
@@ -50,15 +52,18 @@ class _LocationState extends State<Location> {
               Text("Current Location", style: style16),
               10.verticalSpace,
               TextFormField(
+                readOnly: true,
                 decoration: authdecoration.copyWith(
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 20,
                     horizontal: 20,
                   ),
                   hintText: "Kenwood Place, Florida, US..",
-                  suffixIcon: Icon(
-                    Icons.location_searching,
-                    color: Colors.grey,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      Get.to(() => const GoogleMapScreen());
+                    },
+                    child: Icon(Icons.location_searching, color: Colors.grey),
                   ),
                 ),
               ),
