@@ -1,9 +1,6 @@
 import 'package:datingapp/core/custom_widget/custom_continer.dart';
-import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
 import 'package:datingapp/ui/screens/home_Swip/home.dart';
 import 'package:datingapp/ui/screens/home_Swip/home_swip.dart';
-import 'package:datingapp/ui/screens/location_screen/location.dart';
-import 'package:datingapp/ui/screens/location_screen/location1.dart';
 import 'package:datingapp/ui/screens/user_screen/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Homecontiner(),
+          home: UserScreen(),
         );
       },
     );
