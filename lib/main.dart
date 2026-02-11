@@ -1,6 +1,3 @@
-import 'package:datingapp/core/custom_widget/custom_continer.dart';
-import 'package:datingapp/ui/screens/home_Swip/home.dart';
-import 'package:datingapp/ui/screens/home_Swip/home_swip.dart';
 import 'package:datingapp/ui/screens/user_screen/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
