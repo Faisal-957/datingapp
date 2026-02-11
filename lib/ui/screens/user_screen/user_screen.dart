@@ -46,7 +46,7 @@ class UserScreen extends StatelessWidget {
                       Image.asset("$iconsAssets/Filter.png", scale: 3),
                     ],
                   ),
-                  Image.asset("$staticAssets/Addicon.png", scale: 3),
+
                   SizedBox(
                     height: 100,
                     child: ListView.builder(
@@ -55,6 +55,39 @@ class UserScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return value.usericon[index];
                       },
+                    ),
+                  ),
+
+                  Expanded(
+                    child: DefaultTabController(
+                      length: 4,
+                      child: Column(
+                        children: [
+                          TabBar(
+                            indicatorSize: TabBarIndicatorSize.tab,
+                            dividerColor: Colors.transparent,
+                            indicatorColor: darkblueColor,
+                            labelColor: primaryColor,
+                            unselectedLabelColor: Color(0xff4635E2),
+                            tabs: [
+                              Tab(text: "All"),
+                              Tab(text: "Online"),
+                              Tab(text: "New Daters"),
+                              Tab(text: "Liked You"),
+                            ],
+                          ),
+
+                          Expanded(
+                            child: TabBarView(
+                              children: [
+                                Center(child: Text("Home Content")),
+                                Center(child: Text("Profile Content")),
+                                Center(child: Text("Settings Content")),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
