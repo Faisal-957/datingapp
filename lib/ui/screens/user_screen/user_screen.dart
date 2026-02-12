@@ -1,7 +1,7 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
-import 'package:datingapp/ui/screens/user_screen/user_viewmodel.dart';
+import 'package:datingapp/ui/screens/user_screen/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -26,7 +26,7 @@ class UserScreen extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 children: [
                   Row(
@@ -58,36 +58,43 @@ class UserScreen extends StatelessWidget {
                     ),
                   ),
 
+                  ///
+                  ///  tabs
+                  ///
+                  DefaultTabController(
+                    length: 4,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          dividerColor: Colors.transparent,
+                          indicatorColor: darkblueColor,
+                          labelColor: primaryColor,
+                          unselectedLabelColor: Color(0xff4635E2),
+                          tabs: [
+                            Tab(text: "All"),
+                            Tab(text: "Online"),
+                            Tab(text: "New Daters"),
+                            Tab(text: "Liked You"),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  20.verticalSpace,
                   Expanded(
-                    child: DefaultTabController(
-                      length: 4,
-                      child: Column(
-                        children: [
-                          TabBar(
-                            indicatorSize: TabBarIndicatorSize.tab,
-                            dividerColor: Colors.transparent,
-                            indicatorColor: darkblueColor,
-                            labelColor: primaryColor,
-                            unselectedLabelColor: Color(0xff4635E2),
-                            tabs: [
-                              Tab(text: "All"),
-                              Tab(text: "Online"),
-                              Tab(text: "New Daters"),
-                              Tab(text: "Liked You"),
-                            ],
-                          ),
-
-                          Expanded(
-                            child: TabBarView(
-                              children: [
-                                Center(child: Text("Home Content")),
-                                Center(child: Text("Profile Content")),
-                                Center(child: Text("Settings Content")),
-                              ],
-                            ),
-                          ),
-                        ],
+                    child: GridView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: value.grid.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        childAspectRatio: 0.9,
                       ),
+                      itemBuilder: (context, index) {
+                        return value.grid[index];
+                      },
                     ),
                   ),
                 ],
