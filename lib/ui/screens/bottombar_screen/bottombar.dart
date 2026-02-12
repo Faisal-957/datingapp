@@ -1,9 +1,11 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
+import 'package:datingapp/ui/screens/home_Swip/home_swip.dart';
 import 'package:datingapp/ui/screens/intro_screen/intro_screen3.dart';
 import 'package:datingapp/ui/screens/location_screen/location.dart';
 import 'package:datingapp/ui/screens/personal_details/Personal_details.dart';
 import 'package:datingapp/ui/screens/select_intrest/select_intrest.dart';
+import 'package:datingapp/ui/screens/user_screen/user_screen.dart';
 import 'package:flutter/material.dart';
 
 class Bottombar extends StatefulWidget {
@@ -16,8 +18,8 @@ class Bottombar extends StatefulWidget {
 class _BottombarState extends State<Bottombar> {
   int currentIndex = 0;
   final List<Widget> screens = [
-    Location(),
-    SelectIntrest(),
+    HomeSwip(),
+    UserScreen(),
     Personaldetails(),
     IntroScreen3(),
   ];
@@ -26,6 +28,8 @@ class _BottombarState extends State<Bottombar> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 28,
+
         currentIndex: currentIndex,
         onTap: (value) {
           setState(() {

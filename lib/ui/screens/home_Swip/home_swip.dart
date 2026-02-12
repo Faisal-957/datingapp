@@ -60,6 +60,15 @@ class HomeSwip extends StatelessWidget {
                           ) => model.cards[index],
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset("$iconsAssets/like.png", scale: 4),
+                      Image.asset("$iconsAssets/love.png", scale: 4),
+                      Image.asset("$iconsAssets/dislike.png", scale: 4),
+                      Image.asset("$iconsAssets/info.png", scale: 4),
+                    ],
+                  ),
                 ],
               ),
             ),

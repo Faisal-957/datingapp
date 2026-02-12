@@ -4,10 +4,17 @@ import 'package:provider/provider.dart';
 
 class HomeViewModel extends ChangeNotifier {
   List<CustomHomeCard> cards = [
-    CustomHomeCard(title: "yaseen kumarrrrrrrr"),
-    CustomHomeCard(title: " faisal khan akundi"),
-    CustomHomeCard(title: "sanan"),
+    CustomHomeCard(title: "yaseen kumar", color: Colors.pink),
+    CustomHomeCard(
+      title: " faisal khan akundi",
+      color: Colors.deepPurpleAccent,
+    ),
+    CustomHomeCard(title: "sanan jameel ", color: Colors.cyan),
+    CustomHomeCard(title: "yaseen kumar", color: Colors.pink),
+    CustomHomeCard(
+      title: " faisal khan akundi",
+      color: Colors.deepPurpleAccent,
+    ),
+    CustomHomeCard(title: "sanan jameel ", color: Colors.cyan),
   ];
-
-  void colorChange() {}
 }
