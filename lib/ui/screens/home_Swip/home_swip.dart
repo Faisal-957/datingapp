@@ -1,7 +1,6 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
-import 'package:datingapp/core/custom_widget/custom_continer.dart';
 import 'package:datingapp/ui/screens/home_Swip/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';

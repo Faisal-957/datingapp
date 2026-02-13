@@ -1,5 +1,6 @@
 import 'package:datingapp/core/custom_widget/custom_usericon.dart';
 import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
+import 'package:datingapp/ui/screens/chat_screen/chat_screen.dart';
 import 'package:datingapp/ui/screens/user_screen/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

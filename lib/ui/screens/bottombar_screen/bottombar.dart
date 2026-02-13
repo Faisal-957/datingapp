@@ -1,5 +1,6 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
+import 'package:datingapp/ui/screens/chat_screen/chat_screen.dart';
 import 'package:datingapp/ui/screens/home_Swip/home_swip.dart';
 import 'package:datingapp/ui/screens/intro_screen/intro_screen3.dart';
 import 'package:datingapp/ui/screens/location_screen/location.dart';
@@ -20,7 +21,7 @@ class _BottombarState extends State<Bottombar> {
   final List<Widget> screens = [
     HomeSwip(),
     UserScreen(),
-    Personaldetails(),
+    ChatScreen(),
     IntroScreen3(),
   ];
   @override
