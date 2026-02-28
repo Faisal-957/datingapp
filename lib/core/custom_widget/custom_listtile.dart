@@ -17,7 +17,7 @@ class CustomListtile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+      padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
@@ -26,10 +26,11 @@ class CustomListtile extends StatelessWidget {
         ],
       ),
       child: ListTile(
+        //minTileHeight: 100,
         leading: Container(
-          padding: EdgeInsets.zero,
-          height: double.infinity,
-          width: 60.w,
+          height: 100,
+          width: 60,
+          //padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           decoration: BoxDecoration(
             color: darkblueColor,
             borderRadius: BorderRadius.circular(10),
