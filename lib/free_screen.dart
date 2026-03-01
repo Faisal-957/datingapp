@@ -7,109 +7,111 @@ class Chatbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF5F5F5),
-      body: Column(
-        children: [
-          /// HEADER
-          Container(
-            height: 140,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xffFD297B), Color(0xff9424F0)],
+      body: SafeArea(
+        child: Column(
+          children: [
+            /// HEADER
+            Container(
+              height: 140,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xffFD297B), Color(0xff9424F0)],
+                ),
+              ),
+              child: SafeArea(
+                child: Row(
+                  children: [
+                    SizedBox(width: 10),
+                    Icon(Icons.arrow_back, color: Colors.white),
+                    Spacer(),
+                    Icon(Icons.more_vert, color: Colors.white),
+                    SizedBox(width: 10),
+                  ],
+                ),
               ),
             ),
-            child: SafeArea(
-              child: Row(
+
+            /// PROFILE
+            Transform.translate(
+              offset: Offset(0, -40),
+              child: Column(
                 children: [
-                  SizedBox(width: 10),
-                  Icon(Icons.arrow_back, color: Colors.white),
-                  Spacer(),
-                  Icon(Icons.more_vert, color: Colors.white),
-                  SizedBox(width: 10),
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.grey.shade300,
+                    child: Icon(Icons.person, size: 40),
+                  ),
+
+                  SizedBox(height: 8),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Belle Benson",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 5),
+                      CircleAvatar(radius: 4, backgroundColor: Colors.green),
+                    ],
+                  ),
                 ],
               ),
             ),
-          ),
 
-          /// PROFILE
-          Transform.translate(
-            offset: Offset(0, -40),
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 40,
-                  backgroundColor: Colors.grey.shade300,
-                  child: Icon(Icons.person, size: 40),
-                ),
+            /// CHAT LIST
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  leftBubble("Hi, Good Morning", "8:19 AM"),
 
-                SizedBox(height: 8),
+                  rightBubble("Good Morning, any plan for today?", "09:37 AM"),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Belle Benson",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                  leftBubble("Nothing much, W@H, Yours?", "9:49 AM"),
+                ],
+              ),
+            ),
+
+            /// INPUT BOX
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Type Message",
+                        border: InputBorder.none,
                       ),
                     ),
-                    SizedBox(width: 5),
-                    CircleAvatar(radius: 4, backgroundColor: Colors.green),
-                  ],
-                ),
-              ],
-            ),
-          ),
-
-          /// CHAT LIST
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              children: [
-                leftBubble("Hi, Good Morning", "8:19 AM"),
-
-                rightBubble("Good Morning, any plan for today?", "09:37 AM"),
-
-                leftBubble("Nothing much, W@H, Yours?", "9:49 AM"),
-              ],
-            ),
-          ),
-
-          /// INPUT BOX
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Type Message",
-                      border: InputBorder.none,
-                    ),
                   ),
-                ),
 
-                Icon(Icons.send, color: Colors.deepPurple),
+                  Icon(Icons.send, color: Colors.deepPurple),
 
-                SizedBox(width: 10),
+                  SizedBox(width: 10),
 
-                Icon(Icons.emoji_emotions_outlined, color: Colors.pink),
+                  Icon(Icons.emoji_emotions_outlined, color: Colors.pink),
 
-                SizedBox(width: 10),
+                  SizedBox(width: 10),
 
-                Icon(Icons.attach_file, color: Colors.deepPurple),
+                  Icon(Icons.attach_file, color: Colors.deepPurple),
 
-                SizedBox(width: 10),
+                  SizedBox(width: 10),
 
-                Icon(Icons.mic, color: Colors.pink),
-              ],
+                  Icon(Icons.mic, color: Colors.pink),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
