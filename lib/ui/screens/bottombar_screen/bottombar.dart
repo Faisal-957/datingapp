@@ -5,6 +5,7 @@ import 'package:datingapp/ui/screens/home_Swip/home_swip.dart';
 import 'package:datingapp/ui/screens/intro_screen/intro_screen3.dart';
 import 'package:datingapp/ui/screens/location_screen/location.dart';
 import 'package:datingapp/ui/screens/personal_details/Personal_details.dart';
+import 'package:datingapp/ui/screens/profile_screen/profile_screen.dart';
 import 'package:datingapp/ui/screens/select_intrest/select_intrest.dart';
 import 'package:datingapp/ui/screens/user_screen/user_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _BottombarState extends State<Bottombar> {
     HomeSwip(),
     UserScreen(),
     ChatScreen(),
-    IntroScreen3(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {

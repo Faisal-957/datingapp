@@ -3,6 +3,7 @@ import 'package:datingapp/free_screen.dart';
 import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
 import 'package:datingapp/ui/screens/chat_screen/chat_screen.dart';
 import 'package:datingapp/ui/screens/message_screen/message_screen.dart';
+import 'package:datingapp/ui/screens/profile_screen/profile_screen.dart';
 import 'package:datingapp/ui/screens/user_screen/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: MessageScreen(),
+          home: Bottombar(),
         );
       },
     );

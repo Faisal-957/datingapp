@@ -10,7 +10,6 @@ class MessageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // default hota hai
       body: SafeArea(
         child: Container(
           height: double.infinity,
