@@ -26,7 +26,7 @@ class ChatScreen extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 25),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,6 +47,10 @@ class ChatScreen extends StatelessWidget {
                   TextFormField(
                     decoration: authdecoration.copyWith(
                       hintText: "Search Message, Match",
+                      suffixIcon: Image.asset(
+                        "$iconsAssets/search.png",
+                        scale: 3,
+                      ),
                     ),
                   ),
                   30.verticalSpace,
@@ -75,6 +79,7 @@ class ChatScreen extends StatelessWidget {
                   20.verticalSpace,
                   Expanded(
                     child: ListView.builder(
+                      padding: EdgeInsets.zero,
                       shrinkWrap: true,
                       itemCount: value.tilelist.length,
                       itemBuilder: (context, index) {

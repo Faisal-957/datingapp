@@ -20,11 +20,12 @@ class ProfileScreen extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("$staticAssets/Profile22.png"),
+                image: AssetImage("$staticAssets/profile1.png"),
+                fit: BoxFit.cover,
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,31 +37,45 @@ class ProfileScreen extends StatelessWidget {
                       Icon(Icons.settings, color: darkblueColor),
                     ],
                   ),
-                  30.verticalSpace,
-                  Image.asset("$staticAssets/Profileinput.png", scale: 4),
-                  20.verticalSpace,
+
+                  170.verticalSpace,
                   Text("Mathew Bennett", style: style45.copyWith(fontSize: 32)),
+                  10.verticalSpace,
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      Icon(Icons.phone, color: lightpuerpl),
                       Text(
                         "+01 331 623 8413",
-                        style: style18.copyWith(color: lightpuerpl),
+                        style: style16.copyWith(color: lightpuerpl),
                       ),
+                      10.horizontalSpace,
+                      Image.asset("$iconsAssets/favorites.png", scale: 4),
+                      10.horizontalSpace,
+                      Image.asset("$iconsAssets/likes.png", scale: 4),
+                      10.horizontalSpace,
+                      Image.asset("$iconsAssets/chats1.png", scale: 4),
+                      10.horizontalSpace,
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.email, color: lightpuerpl),
+                      10.horizontalSpace,
                       Text(
                         "mathew.b@gmail.com",
                         style: style18.copyWith(color: lightpuerpl),
                       ),
                     ],
                   ),
-                  30.verticalSpace,
+                  10.verticalSpace,
                   Text(
                     "Short Bio",
                     style: style18.copyWith(fontSize: 20, color: darkblueColor),
                   ),
                   Text(
                     "Love music, cooking, swimming, going out, travellig etc. Wanna be friends??",
-                    style: style18.copyWith(color: Colors.grey),
+                    style: style18.copyWith(color: lightpuerpl),
                   ),
 
                   DefaultTabController(
@@ -88,19 +103,15 @@ class ProfileScreen extends StatelessWidget {
                     height: 100.h,
 
                     child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 15),
+                      padding: EdgeInsets.zero,
                       scrollDirection: Axis.horizontal,
-
                       itemCount: 4,
                       itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: continerp(),
-                        );
+                        return GalleryImages();
                       },
                     ),
                   ),
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Text(
                     "Interests",
                     style: style18.copyWith(fontSize: 20, color: darkblueColor),
@@ -110,22 +121,22 @@ class ProfileScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        _hobbyitem(
+                        _Hobbyitem(
                           icon: "$iconsAssets/music.png",
                           title: "Music",
                         ),
                         20.horizontalSpace,
-                        _hobbyitem(
+                        _Hobbyitem(
                           icon: "$iconsAssets/cooking.png",
                           title: "Cooking",
                         ),
                         20.horizontalSpace,
-                        _hobbyitem(
+                        _Hobbyitem(
                           icon: "$iconsAssets/swiming.png",
                           title: "Swimming",
                         ),
                         20.horizontalSpace,
-                        _hobbyitem(
+                        _Hobbyitem(
                           icon: "$iconsAssets/shopping.png",
                           title: "Shopping",
                         ),
@@ -142,16 +153,16 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-class _hobbyitem extends StatelessWidget {
+class _Hobbyitem extends StatelessWidget {
   String icon;
   String title;
-  _hobbyitem({super.key, required this.icon, required this.title});
+  _Hobbyitem({required this.icon, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(icon, scale: 3),
+        Image.asset(icon, scale: 4),
         10.horizontalSpace,
         Text(title, style: style18.copyWith(color: lightpuerpl)),
       ],
@@ -159,15 +170,14 @@ class _hobbyitem extends StatelessWidget {
   }
 }
 
-class continerp extends StatelessWidget {
-  const continerp({super.key});
+class GalleryImages extends StatelessWidget {
+  const GalleryImages({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.h,
       width: 100.w,
-
+      margin: EdgeInsets.only(left: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.blue,

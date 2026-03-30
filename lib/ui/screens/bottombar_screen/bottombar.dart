@@ -30,7 +30,7 @@ class _BottombarState extends State<Bottombar> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        iconSize: 28,
+        iconSize: 1,
 
         currentIndex: currentIndex,
         onTap: (value) {
@@ -43,7 +43,7 @@ class _BottombarState extends State<Bottombar> {
           BottomNavigationBarItem(
             icon: Image.asset(
               "$iconsAssets/swipe1.png",
-              scale: 3,
+              scale: 4,
               color: currentIndex == 0 ? darkblueColor : null,
             ),
             label: "",
@@ -51,7 +51,7 @@ class _BottombarState extends State<Bottombar> {
           BottomNavigationBarItem(
             icon: Image.asset(
               "$iconsAssets/dots.png",
-              scale: 3,
+              scale: 4,
               color: currentIndex == 1 ? darkblueColor : null,
             ),
             label: "",
@@ -59,7 +59,7 @@ class _BottombarState extends State<Bottombar> {
           BottomNavigationBarItem(
             icon: Image.asset(
               "$iconsAssets/chats.png",
-              scale: 3,
+              scale: 4,
               color: currentIndex == 2 ? darkblueColor : null,
             ),
             label: "",
@@ -67,7 +67,7 @@ class _BottombarState extends State<Bottombar> {
           BottomNavigationBarItem(
             icon: Image.asset(
               "$iconsAssets/user.png",
-              scale: 3,
+              scale: 4,
               color: currentIndex == 3 ? darkblueColor : null,
             ),
             label: "",

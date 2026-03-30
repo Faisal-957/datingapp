@@ -26,7 +26,7 @@ class HomeSwip extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 30),
               child: Column(
                 children: [
                   Row(

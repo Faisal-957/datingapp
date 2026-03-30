@@ -26,7 +26,7 @@ class UserScreen extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 40),
               child: Column(
                 children: [
                   Row(
@@ -81,7 +81,7 @@ class UserScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  20.verticalSpace,
+                  //20.verticalSpace,
                   Expanded(
                     child: GridView.builder(
                       scrollDirection: Axis.vertical,
@@ -90,7 +90,7 @@ class UserScreen extends StatelessWidget {
                         crossAxisCount: 2,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        childAspectRatio: 0.9,
+                        childAspectRatio: 0.87,
                       ),
                       itemBuilder: (context, index) {
                         return value.grid[index];
