@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 
-import 'package:datingapp/ui/screens/intro_screen/otp.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/otp.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

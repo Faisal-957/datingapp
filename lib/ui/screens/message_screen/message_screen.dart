@@ -1,15 +1,64 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/custom_widget/custom_chat_bubble.dart';
+import 'package:datingapp/ui/screens/message_screen/message_menupopup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageScreen extends StatelessWidget {
-  const MessageScreen({super.key});
+  final List<MessageMenupopup> draweitem = [
+    MessageMenupopup(icon: Icons.person, title: "View Profile", onTap: () {}),
+    MessageMenupopup(
+      icon: Icons.archive,
+      title: "Archive Conversation",
+      onTap: () {},
+    ),
+    MessageMenupopup(icon: Icons.delete, title: "Delete Chat", onTap: () {}),
+    MessageMenupopup(
+      icon: Icons.clear_all,
+      title: "Clear History",
+      onTap: () {},
+    ),
+    MessageMenupopup(icon: Icons.search, title: "Search Chat", onTap: () {}),
+    MessageMenupopup(icon: Icons.photo, title: "View Media", onTap: () {}),
+    MessageMenupopup(icon: Icons.block, title: "Block User", onTap: () {}),
+    MessageMenupopup(icon: Icons.report, title: "Report User", onTap: () {}),
+  ];
+  MessageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Align(
+        alignment: Alignment.topRight,
+        child: SizedBox(
+          height: 500.h,
+          width: 297.w,
+          child: Drawer(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [primaryColor, secondaryColor],
+                  begin: Alignment.centerRight,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+              child: Expanded(
+                child: ListView.builder(
+                  itemCount: draweitem.length,
+                  itemBuilder: (context, index) {
+                    return draweitem[index];
+                  },
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+
       body: SafeArea(
         child: Container(
           height: double.infinity,
@@ -30,8 +79,16 @@ class MessageScreen extends StatelessWidget {
                     SizedBox(width: 20),
                     Icon(Icons.arrow_back, color: Colors.white),
                     Spacer(),
-
-                    Icon(Icons.more_vert, color: Colors.black),
+                    Builder(
+                      builder: (context) {
+                        return IconButton(
+                          icon: Icon(Icons.more_vert, color: Colors.black),
+                          onPressed: () {
+                            Scaffold.of(context).openEndDrawer();
+                          },
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
