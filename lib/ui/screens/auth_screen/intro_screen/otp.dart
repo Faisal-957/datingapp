@@ -1,8 +1,11 @@
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
+import 'package:datingapp/ui/screens/personal_details/personal_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:pinput/pinput.dart';
 
 class Otp extends StatelessWidget {
@@ -54,7 +57,9 @@ class Otp extends StatelessWidget {
             40.verticalSpace,
             CustomButtton(
               title: "Submit",
-              onTap: () {},
+              onTap: () {
+                Get.to(const Personaldetails());
+              },
               height: 65.h,
               width: 212.w,
               borderRadius: 80,

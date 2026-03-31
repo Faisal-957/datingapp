@@ -1,4 +1,6 @@
 import 'package:datingapp/ui/screens/message_screen/message_screen.dart';
+import 'package:datingapp/ui/screens/setting_screen/seetingscreen.dart';
+import 'package:datingapp/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: MessageScreen(),
+          home: Seetingscreen(),
         );
       },
     );

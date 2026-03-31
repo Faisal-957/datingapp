@@ -2,8 +2,11 @@ import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
+import 'package:datingapp/ui/screens/location_screen/location.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/state_manager.dart';
 
 class SelectIntrest extends StatefulWidget {
   const SelectIntrest({super.key});
@@ -106,14 +109,16 @@ class _SelectIntrestState extends State<SelectIntrest> {
                 ),
               ),
 
-              SizedBox(height: 30.h),
+              SizedBox(height: 20.h),
               Center(
                 child: CustomButtton(
                   title: "Continue",
                   width: 212.w,
                   height: 60.h,
                   borderRadius: 60,
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(const Location());
+                  },
                 ),
               ),
               SizedBox(height: 20.h),

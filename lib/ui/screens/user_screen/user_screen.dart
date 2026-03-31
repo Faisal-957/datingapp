@@ -1,6 +1,7 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
+import 'package:datingapp/ui/screens/filterscreen/filter_screen.dart';
 import 'package:datingapp/ui/screens/user_screen/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,11 +40,16 @@ class UserScreen extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      Image.asset("$iconsAssets/Serach.png", scale: 3),
+                      Image.asset("$iconsAssets/search.png", scale: 3),
                       15.horizontalSpace,
                       Image.asset("$iconsAssets/bellicon.png", scale: 3),
                       15.horizontalSpace,
-                      Image.asset("$iconsAssets/Filter.png", scale: 3),
+                      GestureDetector(
+                        child: Image.asset("$iconsAssets/Filter.png", scale: 3),
+                        onTap: () {
+                          Get.to(const FilterScreen());
+                        },
+                      ),
                     ],
                   ),
 

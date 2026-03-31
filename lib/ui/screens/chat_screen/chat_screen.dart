@@ -3,8 +3,10 @@ import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/ui/screens/chat_screen/chat_viewmodel.dart';
+import 'package:datingapp/ui/screens/message_screen/message_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -65,9 +67,15 @@ class ChatScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: value.newmatch.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 5),
-                          child: value.newmatch[index],
+                        return GestureDetector(
+                          onTap: () {
+                            Get.to(MessageScreen());
+                            // Handle tap event for new match
+                          },
+                          child: Container(
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                            child: value.newmatch[index],
+                          ),
                         );
                       },
                     ),
@@ -83,9 +91,14 @@ class ChatScreen extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: value.tilelist.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          margin: EdgeInsets.only(top: 15),
-                          child: value.tilelist[index],
+                        return GestureDetector(
+                          onTap: () {
+                            Get.to(MessageScreen());
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(top: 15),
+                            child: value.tilelist[index],
+                          ),
                         );
                       },
                     ),

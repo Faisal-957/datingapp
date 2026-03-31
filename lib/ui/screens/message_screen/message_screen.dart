@@ -4,6 +4,7 @@ import 'package:datingapp/core/custom_widget/custom_chat_bubble.dart';
 import 'package:datingapp/ui/screens/message_screen/message_menupopup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+// drawer items in chat screen/////////////////
 
 class MessageScreen extends StatelessWidget {
   final List<MessageMenupopup> draweitem = [
@@ -14,11 +15,7 @@ class MessageScreen extends StatelessWidget {
       onTap: () {},
     ),
     MessageMenupopup(icon: Icons.delete, title: "Delete Chat", onTap: () {}),
-    MessageMenupopup(
-      icon: Icons.clear_all,
-      title: "Clear History",
-      onTap: () {},
-    ),
+    MessageMenupopup(icon: Icons.clear, title: "Clear History", onTap: () {}),
     MessageMenupopup(icon: Icons.search, title: "Search Chat", onTap: () {}),
     MessageMenupopup(icon: Icons.photo, title: "View Media", onTap: () {}),
     MessageMenupopup(icon: Icons.block, title: "Block User", onTap: () {}),
@@ -32,8 +29,8 @@ class MessageScreen extends StatelessWidget {
       endDrawer: Align(
         alignment: Alignment.topRight,
         child: SizedBox(
-          height: 500.h,
           width: 297.w,
+          height: 650,
           child: Drawer(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
@@ -41,16 +38,20 @@ class MessageScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [primaryColor, secondaryColor],
+                  colors: [Color(0xFFC9234F), Color(0xFF7E1D96)],
                   begin: Alignment.centerRight,
                   end: Alignment.bottomCenter,
                 ),
               ),
-              child: Expanded(
-                child: ListView.builder(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: ListView.separated(
                   itemCount: draweitem.length,
                   itemBuilder: (context, index) {
                     return draweitem[index];
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider(color: Colors.white24, thickness: 0.5);
                   },
                 ),
               ),

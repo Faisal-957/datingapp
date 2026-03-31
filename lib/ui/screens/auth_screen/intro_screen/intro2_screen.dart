@@ -1,8 +1,11 @@
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/intro_screen3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 class Intro2Screen extends StatelessWidget {
   const Intro2Screen({super.key});
@@ -40,7 +43,9 @@ class Intro2Screen extends StatelessWidget {
             Image.asset("$staticAssets/intro2.png", scale: 3),
             CustomButtton(
               title: "Start Dating",
-              onTap: () {},
+              onTap: () {
+                Get.to(const IntroScreen3());
+              },
               width: 200.w,
               height: 50.h,
               borderRadius: 30,

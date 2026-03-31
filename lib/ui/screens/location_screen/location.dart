@@ -3,6 +3,7 @@ import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
+import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
 import 'package:datingapp/ui/screens/location_screen/location1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,7 +80,9 @@ class _LocationState extends State<Location> {
               Center(
                 child: CustomButtton(
                   title: "Continue",
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(const Bottombar());
+                  },
                   borderRadius: 60,
                   height: 65.h,
                   width: 212.w,

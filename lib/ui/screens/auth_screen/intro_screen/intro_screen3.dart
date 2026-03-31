@@ -2,8 +2,11 @@ import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/otp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class IntroScreen3 extends StatelessWidget {
@@ -79,7 +82,9 @@ class IntroScreen3 extends StatelessWidget {
 
               CustomButtton(
                 title: "Submit",
-                onTap: () {},
+                onTap: () {
+                  Get.to(const Otp());
+                },
                 width: 212.w,
                 height: 65.h,
                 borderRadius: 80,

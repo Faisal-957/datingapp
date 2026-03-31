@@ -40,7 +40,7 @@ class HomeSwip extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      Image.asset("$iconsAssets/Serach.png", scale: 3),
+                      Image.asset("$iconsAssets/search.png", scale: 3),
                       15.horizontalSpace,
                       Image.asset("$iconsAssets/bellicon.png", scale: 3),
                       15.horizontalSpace,

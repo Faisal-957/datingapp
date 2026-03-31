@@ -71,6 +71,8 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
         markers: _markers,
         myLocationEnabled: true,
         zoomControlsEnabled: true,
+        myLocationButtonEnabled: true,
+        mapType: MapType.normal,
       ),
     );
   }
