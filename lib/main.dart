@@ -1,4 +1,9 @@
+import 'package:datingapp/free_screen.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/otp.dart';
+import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
 import 'package:datingapp/ui/screens/message_screen/message_screen.dart';
+import 'package:datingapp/ui/screens/notifications/notification.dart';
+import 'package:datingapp/ui/screens/profile_screen/profile_screen.dart';
 import 'package:datingapp/ui/screens/setting_screen/seetingscreen.dart';
 import 'package:datingapp/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +24,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: Seetingscreen(),
-        );
+        return GetMaterialApp(debugShowCheckedModeBanner: false, home: Otp());
       },
     );
   }

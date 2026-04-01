@@ -1,163 +1,152 @@
 import 'package:flutter/material.dart';
 
-class Chatbox extends StatelessWidget {
-  const Chatbox({super.key});
+class NotificationsPage extends StatelessWidget {
+  const NotificationsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF5F5F5),
-      body: SafeArea(
-        child: Column(
-          children: [
-            /// HEADER
-            Container(
-              height: 140,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xffFD297B), Color(0xff9424F0)],
-                ),
-              ),
-              child: SafeArea(
-                child: Row(
-                  children: [
-                    SizedBox(width: 10),
-                    Icon(Icons.arrow_back, color: Colors.white),
-                    Spacer(),
-                    Icon(Icons.more_vert, color: Colors.white),
-                    SizedBox(width: 10),
-                  ],
-                ),
-              ),
-            ),
-
-            /// PROFILE
-            Transform.translate(
-              offset: Offset(0, -40),
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.grey.shade300,
-                    child: Icon(Icons.person, size: 40),
-                  ),
-
-                  SizedBox(height: 8),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Belle Benson",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      CircleAvatar(radius: 4, backgroundColor: Colors.green),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            /// CHAT LIST
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                children: [
-                  leftBubble("Hi, Good Morning", "8:19 AM"),
-
-                  rightBubble("Good Morning, any plan for today?", "09:37 AM"),
-
-                  leftBubble("Nothing much, W@H, Yours?", "9:49 AM"),
-                ],
-              ),
-            ),
-
-            /// INPUT BOX
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: "Type Message",
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-
-                  Icon(Icons.send, color: Colors.deepPurple),
-
-                  SizedBox(width: 10),
-
-                  Icon(Icons.emoji_emotions_outlined, color: Colors.pink),
-
-                  SizedBox(width: 10),
-
-                  Icon(Icons.attach_file, color: Colors.deepPurple),
-
-                  SizedBox(width: 10),
-
-                  Icon(Icons.mic, color: Colors.pink),
-                ],
-              ),
-            ),
-          ],
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black54),
+          onPressed: () {},
         ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Notifications',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF2D2D52),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Check notifications, respond & keep dating',
+                  style: TextStyle(fontSize: 16, color: Colors.black54),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: ListView(
+              children: const [
+                NotificationItem(
+                  title: 'Myley Corbyn liked you',
+                  subtitle:
+                      'Hi Mathew, Myley here. Would you like to chat? waiting..',
+                  time: '03:42 PM | 30.04.2021',
+                  avatarColor: Colors.deepPurpleAccent,
+                ),
+                NotificationItem(
+                  title: 'Big Discount, Hurry!',
+                  subtitle:
+                      "Season's discount, only for you, put yourself in spotlight, enjoy dating.",
+                  time: '09:32 AM | 30.04.2021',
+                  avatarColor: Colors.red,
+                  isDiscount: true,
+                ),
+                NotificationItem(
+                  title: 'Sara Christin liked you back',
+                  subtitle:
+                      'Hi Mathew, Thanks for your interest. Would love to hear you back..',
+                  time: '11:13 AM | 29.04.2021',
+                  avatarColor: Colors.deepPurpleAccent,
+                ),
+                NotificationItem(
+                  title: 'You liked Ruby',
+                  subtitle:
+                      "You liked Ruby, check out what's her response, keep dating..",
+                  time: '09:57 AM | 29.04.2021',
+                  avatarColor: Colors.deepPurpleAccent,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
+}
 
-  /// LEFT MESSAGE
-  Widget leftBubble(String text, String time) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        margin: EdgeInsets.only(bottom: 10),
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(text),
-            SizedBox(height: 5),
-            Text(time, style: TextStyle(fontSize: 10, color: Colors.grey)),
-          ],
-        ),
+class NotificationItem extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String time;
+  final Color avatarColor;
+  final bool isDiscount;
+
+  const NotificationItem({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.time,
+    required this.avatarColor,
+    this.isDiscount = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: Colors.black12, width: 0.5)),
       ),
-    );
-  }
-
-  /// RIGHT MESSAGE
-  Widget rightBubble(String text, String time) {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: Container(
-        margin: EdgeInsets.only(bottom: 10),
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Color(0xffE8E3FF),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(text),
-            SizedBox(height: 5),
-            Text(time, style: TextStyle(fontSize: 10, color: Colors.grey)),
-          ],
-        ),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Avatar Circle
+          CircleAvatar(
+            radius: 28,
+            backgroundColor: avatarColor,
+            child: isDiscount
+                ? const Icon(Icons.favorite, color: Colors.white, size: 30)
+                : null,
+          ),
+          const SizedBox(width: 16),
+          // Content
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.black54,
+                    height: 1.3,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  time,
+                  style: const TextStyle(fontSize: 12, color: Colors.black38),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

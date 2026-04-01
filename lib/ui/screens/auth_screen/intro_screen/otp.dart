@@ -1,9 +1,11 @@
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
+import 'package:datingapp/core/custom_widget/bg_container.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
 import 'package:datingapp/ui/screens/personal_details/personal_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:pinput/pinput.dart';
@@ -14,72 +16,90 @@ class Otp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("$staticAssets/intro3_bg.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("Verify", style: style45),
-            Text(
-              textAlign: TextAlign.center,
-              "Please enter the 4-digit code \nsent to your number.",
-              style: style16.copyWith(
-                color: Color(0xFF645290),
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            20.verticalSpace,
-            Pinput(
-              length: 4,
-              defaultPinTheme: PinTheme(
-                width: 60,
-                height: 60,
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(color: Colors.grey.shade300),
-                ),
-              ),
-            ),
-            40.verticalSpace,
-            CustomButtton(
-              title: "Submit",
-              onTap: () {
-                Get.to(const Personaldetails());
-              },
-              height: 65.h,
-              width: 212.w,
-              borderRadius: 80,
-            ),
-            20.verticalSpace,
+      resizeToAvoidBottomInset: false,
+      body: BgContainer(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Image.asset("$iconsAssets/arrowback.png", scale: 3),
+                  ),
+                  200.verticalSpace,
+                  Center(child: Text("Verify", style: style45)),
+                  Center(
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "Please enter the 4-digit code \nsent to your number.",
+                      style: style16.copyWith(
+                        color: Color(0xFF645290),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  20.verticalSpace,
+                  Center(
+                    child: Pinput(
+                      length: 4,
+                      defaultPinTheme: PinTheme(
+                        width: 60,
+                        height: 60,
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
+                          border: Border.all(color: Colors.grey.shade300),
+                        ),
+                      ),
+                    ),
+                  ),
+                  40.verticalSpace,
+                  Center(
+                    child: CustomButtton(
+                      title: "Submit",
+                      onTap: () {
+                        Get.to(const Personaldetails());
+                      },
+                      height: 65.h,
+                      width: 212.w,
+                      borderRadius: 80,
+                    ),
+                  ),
+                  20.verticalSpace,
 
-            ShaderMask(
-              shaderCallback: (bounds) => LinearGradient(
-                colors: [Color(0xff7B49FF), Color(0xffFA457E)],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-              ).createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height)),
-              child: Text(
-                "Resend Code",
-                style: style18.copyWith(
-                  color: Colors.white,
-                ), // color will be replaced by shader
+                  ShaderMask(
+                    shaderCallback: (bounds) =>
+                        LinearGradient(
+                          colors: [Color(0xff7B49FF), Color(0xffFA457E)],
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                        ).createShader(
+                          Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                        ),
+                    child: Center(
+                      child: Text(
+                        "Resend Code",
+                        style: style18.copyWith(
+                          color: Colors.white,
+                        ), // color will be replaced by shader
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

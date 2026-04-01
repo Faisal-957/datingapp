@@ -6,6 +6,9 @@ import 'package:datingapp/core/custom_widget/custom_buttton.dart';
 import 'package:datingapp/ui/screens/filterscreen/filter_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart'
+    show GetNavigation;
 import 'package:provider/provider.dart';
 
 class FilterScreen extends StatelessWidget {
@@ -39,7 +42,15 @@ class FilterScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Image.asset("$iconsAssets/backicon.png", scale: 3),
+                        InkWell(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Image.asset(
+                            "$iconsAssets/backicon.png",
+                            scale: 3,
+                          ),
+                        ),
                         Spacer(),
                         Image.asset("$iconsAssets/refresh.png", scale: 3),
                       ],

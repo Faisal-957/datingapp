@@ -1,9 +1,12 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
+import 'package:datingapp/core/custom_widget/bg_container.dart';
 import 'package:datingapp/core/custom_widget/custom_chat_bubble.dart';
 import 'package:datingapp/ui/screens/message_screen/message_menupopup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 // drawer items in chat screen/////////////////
 
 class MessageScreen extends StatelessWidget {
@@ -26,6 +29,7 @@ class MessageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       endDrawer: Align(
         alignment: Alignment.topRight,
         child: SizedBox(
@@ -60,30 +64,27 @@ class MessageScreen extends StatelessWidget {
         ),
       ),
 
-      body: SafeArea(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("$staticAssets/message.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
+      body: BgContainer(
+        child: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 50),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   children: [
                     SizedBox(width: 20),
-                    Icon(Icons.arrow_back, color: Colors.white),
+                    InkWell(
+                      onTap: () => Get.back(),
+                      child: Image.asset(
+                        "$iconsAssets/arrowback.png",
+                        scale: 3,
+                      ),
+                    ),
                     Spacer(),
                     Builder(
                       builder: (context) {
                         return IconButton(
-                          icon: Icon(Icons.more_vert, color: Colors.black),
+                          icon: Icon(Icons.more_vert, color: darkblueColor),
                           onPressed: () {
                             Scaffold.of(context).openEndDrawer();
                           },

@@ -1,8 +1,11 @@
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
+import 'package:datingapp/ui/screens/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 class Seetingscreen extends StatelessWidget {
   final List<SettingItem> settingsOptions = [
@@ -42,7 +45,15 @@ class Seetingscreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset("$iconsAssets/arrowback.png", scale: 3),
+                    InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Image.asset(
+                        "$iconsAssets/arrowback.png",
+                        scale: 3,
+                      ),
+                    ),
                     Spacer(),
                     Image.asset("$iconsAssets/Logout.png", scale: 3),
                   ],

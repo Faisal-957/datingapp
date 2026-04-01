@@ -3,6 +3,7 @@
 import 'package:datingapp/core/constants/auth_decoration.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
+import 'package:datingapp/core/custom_widget/bg_container.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
 import 'package:datingapp/ui/screens/select_intrest/select_intrest.dart';
 import 'package:flutter/material.dart';
@@ -26,24 +27,22 @@ class _PersonalDetailsState extends State<Personaldetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("$staticAssets/intro3_bg.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: SingleChildScrollView(
-              // ✅ Optional: prevent overflow
+      body: BgContainer(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: SingleChildScrollView(
+            // ✅ Optional: prevent overflow
+            child: SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  50.verticalSpace,
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Image.asset("$iconsAssets/arrowback.png", scale: 3),
+                  ),
+                  20.verticalSpace,
                   Center(
                     child: Text(
                       "Personal Details",
@@ -60,7 +59,7 @@ class _PersonalDetailsState extends State<Personaldetails> {
                     ),
                   ),
 
-                  30.verticalSpace,
+                  20.verticalSpace,
                   Center(
                     child: Stack(
                       clipBehavior: Clip.none,
@@ -85,32 +84,32 @@ class _PersonalDetailsState extends State<Personaldetails> {
                       ],
                     ),
                   ),
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Text(
                     "First Name",
                     style: style16.copyWith(fontWeight: FontWeight.w100),
                   ),
-                  10.verticalSpace,
+                  5.verticalSpace,
                   TextFormField(
                     decoration: authdecoration.copyWith(hintText: "First Name"),
                   ),
 
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Text(
                     "Last Name",
                     style: style16.copyWith(fontWeight: FontWeight.w100),
                   ),
-                  10.verticalSpace,
+                  5.verticalSpace,
                   TextFormField(
                     decoration: authdecoration.copyWith(hintText: "Last Name"),
                   ),
 
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Text(
                     "DOB",
                     style: style16.copyWith(fontWeight: FontWeight.w100),
                   ),
-                  10.verticalSpace,
+                  5.verticalSpace,
                   TextFormField(
                     controller: dobController,
                     readOnly: true,
@@ -217,7 +216,7 @@ class _PersonalDetailsState extends State<Personaldetails> {
                     },
                   ),
 
-                  40.verticalSpace,
+                  20.verticalSpace,
                   Center(
                     child: CustomButtton(
                       title: "Continue",
@@ -229,6 +228,8 @@ class _PersonalDetailsState extends State<Personaldetails> {
                       borderRadius: 80,
                     ),
                   ),
+
+                  20.verticalSpace,
                 ],
               ),
             ),

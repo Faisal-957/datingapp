@@ -6,3 +6,4 @@ const Color blackColor = Color(0xff000000);
 const Color whiteColor = Color(0xffffffff);
 const Color darkblueColor = Color(0xff33196B);
 const Color lightpuerpl = Color(0xff645290);
+const Color lightblueColor = Color(0xff745594);

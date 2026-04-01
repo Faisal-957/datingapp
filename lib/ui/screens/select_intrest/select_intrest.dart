@@ -47,82 +47,92 @@ class _SelectIntrestState extends State<SelectIntrest> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset("$iconsAssets/backicon.png", scale: 3),
-                  Text(
-                    "Skip",
-                    style: style18.copyWith(color: Color(0xFFFB467F)),
-                  ),
-                ],
-              ),
-              SizedBox(height: 50.h),
-              Text(
-                "Likes, Interests",
-                style: style45.copyWith(fontSize: 36, color: darkblueColor),
-              ),
-              SizedBox(height: 10.h),
-              Text(
-                "Share your likes & passion with others",
-                style: style16.copyWith(color: Color(0xFF645290)),
-              ),
-              SizedBox(height: 40.h),
-
-              Expanded(
-                child: GridView.builder(
-                  itemCount: interests.length,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 20,
-                    crossAxisSpacing: 20,
-                    childAspectRatio: 3.5,
-                  ),
-                  itemBuilder: (context, index) {
-                    final title = interests[index]["title"]!;
-                    final icon = interests[index]["icon"]!;
-                    final isSelected = selectedInterests.contains(title);
-
-                    return GestureDetector(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
                       onTap: () {
-                        setState(() {
-                          if (isSelected) {
-                            selectedInterests.remove(title);
-                          } else {
-                            selectedInterests.add(title);
-                          }
-                        });
+                        Get.back();
                       },
-                      child: Intrestbutton(
-                        title: title,
-                        iconPath: icon,
-                        isSelected: isSelected,
+                      child: Image.asset("$iconsAssets/backicon.png", scale: 3),
+                    ),
+                    InkWell(
+                      onTap: () => Get.to(const Location()),
+                      child: Text(
+                        "Skip",
+                        style: style18.copyWith(color: Color(0xFFFB467F)),
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
-              ),
+                SizedBox(height: 50.h),
+                Text(
+                  "Likes, Interests",
+                  style: style45.copyWith(fontSize: 36, color: darkblueColor),
+                ),
+                SizedBox(height: 10.h),
+                Text(
+                  "Share your likes & passion with others",
+                  style: style16.copyWith(color: Color(0xFF645290)),
+                ),
+                SizedBox(height: 40.h),
 
-              SizedBox(height: 20.h),
-              Center(
-                child: CustomButtton(
-                  title: "Continue",
-                  width: 212.w,
-                  height: 60.h,
-                  borderRadius: 60,
-                  onTap: () {
-                    Get.to(const Location());
-                  },
+                Expanded(
+                  child: GridView.builder(
+                    itemCount: interests.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 20,
+                      childAspectRatio: 3.5,
+                    ),
+                    itemBuilder: (context, index) {
+                      final title = interests[index]["title"]!;
+                      final icon = interests[index]["icon"]!;
+                      final isSelected = selectedInterests.contains(title);
+
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            if (isSelected) {
+                              selectedInterests.remove(title);
+                            } else {
+                              selectedInterests.add(title);
+                            }
+                          });
+                        },
+                        child: Intrestbutton(
+                          title: title,
+                          iconPath: icon,
+                          isSelected: isSelected,
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
-              SizedBox(height: 20.h),
-            ],
+
+                SizedBox(height: 20.h),
+                Center(
+                  child: CustomButtton(
+                    title: "Continue",
+                    width: 212.w,
+                    height: 60.h,
+                    borderRadius: 60,
+                    onTap: () {
+                      Get.to(const Location());
+                    },
+                  ),
+                ),
+                SizedBox(height: 20.h),
+              ],
+            ),
           ),
         ),
       ),
