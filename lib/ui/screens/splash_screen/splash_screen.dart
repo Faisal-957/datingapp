@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
-import 'package:datingapp/ui/screens/auth_screen/intro_screen/intro2_screen.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/intro_screen1.dart';
 
 import 'package:datingapp/ui/screens/auth_screen/intro_screen/otp.dart';
 import 'package:flutter/material.dart';

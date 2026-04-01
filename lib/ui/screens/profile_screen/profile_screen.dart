@@ -36,7 +36,15 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Image.asset("$iconsAssets/arrowback.png", scale: 3),
+                        InkWell(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Image.asset(
+                            "$iconsAssets/arrowback.png",
+                            scale: 3,
+                          ),
+                        ),
                         Spacer(),
                         InkWell(
                           onTap: () {
@@ -47,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
 
-                    200.verticalSpace,
+                    220.verticalSpace,
                     Text(
                       "Mathew Bennett",
                       style: style45.copyWith(fontSize: 32),

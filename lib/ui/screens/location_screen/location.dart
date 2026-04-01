@@ -2,6 +2,7 @@ import 'package:datingapp/core/constants/auth_decoration.dart';
 import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
+import 'package:datingapp/core/custom_widget/bg_container.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
 import 'package:datingapp/ui/screens/bottombar_screen/bottombar.dart';
 import 'package:datingapp/ui/screens/location_screen/location1.dart';
@@ -21,15 +22,7 @@ class _LocationState extends State<Location> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("$staticAssets/intro3_bg.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
+      body: BgContainer(
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: SafeArea(

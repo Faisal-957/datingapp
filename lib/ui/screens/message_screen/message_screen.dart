@@ -3,6 +3,7 @@ import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/custom_widget/bg_container.dart';
 import 'package:datingapp/core/custom_widget/custom_chat_bubble.dart';
 import 'package:datingapp/ui/screens/message_screen/message_menupopup.dart';
+import 'package:datingapp/ui/screens/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -11,7 +12,13 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 
 class MessageScreen extends StatelessWidget {
   final List<MessageMenupopup> draweitem = [
-    MessageMenupopup(icon: Icons.person, title: "View Profile", onTap: () {}),
+    MessageMenupopup(
+      icon: Icons.person,
+      title: "View Profile",
+      onTap: () {
+        Get.to(ProfileScreen());
+      },
+    ),
     MessageMenupopup(
       icon: Icons.archive,
       title: "Archive Conversation",

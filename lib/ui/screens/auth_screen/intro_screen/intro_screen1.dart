@@ -1,7 +1,7 @@
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/core/constants/text_style.dart';
 import 'package:datingapp/core/custom_widget/custom_buttton.dart';
-import 'package:datingapp/ui/screens/auth_screen/intro_screen/intro_screen3.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';

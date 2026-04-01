@@ -2,7 +2,7 @@ import 'package:datingapp/core/constants/colors.dart';
 import 'package:datingapp/core/constants/string.dart';
 import 'package:datingapp/ui/screens/chat_screen/chat_screen.dart';
 import 'package:datingapp/ui/screens/home_Swip/home_swip.dart';
-import 'package:datingapp/ui/screens/auth_screen/intro_screen/intro_screen3.dart';
+import 'package:datingapp/ui/screens/auth_screen/intro_screen/login_screen.dart';
 import 'package:datingapp/ui/screens/location_screen/location.dart';
 import 'package:datingapp/ui/screens/personal_details/Personal_details.dart';
 import 'package:datingapp/ui/screens/profile_screen/profile_screen.dart';
